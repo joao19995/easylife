@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.easylife.mais">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp">
+
+        <TableRow android:gravity="center">
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="1"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="2"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="3"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="+"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="4"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="5"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="6"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/minus"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="-"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="7"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="8"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="9"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/vezes"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="*"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <Button
+                android:id="@+id/ponto"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="."
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="0"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/equal"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="="
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+            <Button
+                android:id="@+id/dividir"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/balancebutton"
+                android:text="/"
+                android:textColor="@color/blank"
+                android:textSize="16dp"></Button>
+
+
+        </TableRow>
+
+
+        <Button
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/balancebutton"
+            android:text="Category"
+            android:textColor="@color/blank"
+            android:textSize="16dp"></Button>
+
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="153dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/textview"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/blank"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/green"
+        android:text="November"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Note"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="42dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_delete_text_"
+        app:layout_constraintBottom_toBottomOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="@+id/result"
+        app:layout_constraintTop_toTopOf="@+id/result"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
