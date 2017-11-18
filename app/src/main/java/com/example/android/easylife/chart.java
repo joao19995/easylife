@@ -42,6 +42,7 @@ public class chart extends AppCompatActivity {
             Color.rgb(0, 130, 200), Color.rgb(245, 130, 48), Color.rgb(145, 30, 180),
             Color.rgb(210, 245, 60) , Color.rgb(240, 50, 230) , Color.rgb(170, 110, 40)
     };
+    //dsddsdsd
 
 
     @Override
