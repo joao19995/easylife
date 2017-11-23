@@ -21,7 +21,8 @@
         <activity android:name=".menos" />
         <activity android:name=".menoscategory" />
         <activity android:name=".goal" />
-        <activity android:name=".addgoal"></activity>
+        <activity android:name=".addgoal" />
+        <activity android:name=".teste"></activity>
     </application>
 
 </manifest>

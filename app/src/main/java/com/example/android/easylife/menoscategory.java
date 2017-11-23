@@ -2,7 +2,9 @@ package com.example.android.easylife;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +17,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.android.easylife.data.PetContract;
+import com.example.android.easylife.data.PetDbHelper;
+
 import java.util.Calendar;
+
 
 public class menoscategory extends AppCompatActivity {
     int year_x, mouth_x, day_x;
@@ -25,6 +32,14 @@ public class menoscategory extends AppCompatActivity {
     public static final String EXTRA_BUTTON = "com.example.myfirstapp.BUTTON";
     private int[] less = {R.id.car, R.id.sports, R.id.coffee,R.id.house, R.id.pets, R.id.clothes,R.id.transports,R.id.health, R.id.food};
     static final int DIALOG_ID = 0;
+     String message = new String();
+     String messagenote = new String();
+    String messagebtn = new String();
+    String date_x = new String();
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +47,9 @@ public class menoscategory extends AppCompatActivity {
         setContentView(R.layout.activity_menoscategory);
         final Calendar cal = Calendar.getInstance();
         year_x= cal.get(Calendar.YEAR);
-        mouth_x= cal.get(Calendar.MONTH);
+        mouth_x= cal.get(Calendar.MONTH)+1;
         day_x= cal.get(Calendar.DAY_OF_MONTH);
+        date_x=year_x+"-"+mouth_x+"-"+day_x;
         pickdate();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,10 +78,11 @@ public class menoscategory extends AppCompatActivity {
                 Button button = (Button) v;
                 Intent intent = new Intent(getApplicationContext(), chart.class);
                 TextView result = (TextView) findViewById(R.id.result);
-                String message = result.getText().toString();
+                message = result.getText().toString();
                 EditText note = (EditText) findViewById(R.id.note);
-                String messagenote = note.getText().toString();
-                String messagebtn = button.getText().toString();
+                messagenote = note.getText().toString();
+                messagebtn = button.getText().toString();
+                insertdbinfo();
                 intent.putExtra(EXTRA_MESSAGE, message);
                 intent.putExtra(EXTRA_NOTE, messagenote);
                 intent.putExtra(EXTRA_BUTTON, messagebtn);
@@ -80,6 +97,69 @@ public class menoscategory extends AppCompatActivity {
             findViewById(id).setOnClickListener(listener);
         }
 
+    }
+
+    private void insertdbinfo() {
+
+
+            // Create database helper
+            PetDbHelper mDbHelper = new PetDbHelper(this);
+
+            // Gets the database in write mode
+            SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+            // Create a ContentValues object where column names are the keys,
+            // and pet attributes from the editor are the values.
+            ContentValues values = new ContentValues();
+            values.put(PetContract.PetEntry.COLUMN_MONEY, message);
+            values.put(PetContract.PetEntry.COLUMN_NOTE, messagenote);
+            values.put(PetContract.PetEntry.COLUMN_CATEGORY, messagebtn);
+            values.put(PetContract.PetEntry.COLUMN_DATE, date_x);
+
+            // Insert a new row for pet in the database, returning the ID of that new row.
+            long newRowId = db.insert(PetContract.PetEntry.TABLE_NAME, null, values);
+
+            // Show a toast message depending on whether or not the insertion was successful
+            if (newRowId == -1) {
+                // If the row ID is -1, then there was an error with insertion.
+                Toast.makeText(this, "Error with saving pet", Toast.LENGTH_SHORT).show();
+            } else {
+                // Otherwise, the insertion was successful and we can display a toast with the row ID.
+                Toast.makeText(this, messagebtn + newRowId, Toast.LENGTH_SHORT).show();
+            }
+
+    /*
+
+
+        // Read from input fields
+        // Use trim to eliminate leading or trailing white space
+
+
+        // Create database helper
+        ChartDbHelper mDbHelper = new ChartDbHelper(this);
+
+        // Gets the database in write mode
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        // Create a ContentValues object where column names are the keys,
+        // and pet attributes from the editor are the values.
+        ContentValues values = new ContentValues();
+        values.put(ChartDbEntry.COLUMN_MONEY, message);
+        values.put(ChartDbEntry.COLUMN_NOTE, messagenote);
+        values.put(ChartDbEntry.COLUMN_CATEGORY, messagebtn);
+        values.put(ChartDbEntry.COLUMN_DATE, date_x);
+
+        // Insert a new row for pet in the database, returning the ID of that new row.
+        long newRowId = db.insert(ChartDbEntry.TABLE_NAME, null, values);
+
+        // Show a toast message depending on whether or not the insertion was successful
+        if (newRowId == -1) {
+            // If the row ID is -1, then there was an error with insertion.
+            Toast.makeText(this, "Error with saving pet", Toast.LENGTH_SHORT).show();
+        } else {
+            // Otherwise, the insertion was successful and we can display a toast with the row ID.
+            Toast.makeText(this, "Pet saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+        }*/
     }
 
     @Override
@@ -134,7 +214,8 @@ public class menoscategory extends AppCompatActivity {
             year_x=i;
             mouth_x=i1+1;
             day_x=i2;
-            Toast.makeText(menoscategory.this,year_x+"/"+mouth_x+"/"+day_x,Toast.LENGTH_LONG).show();
+            date_x=year_x+"-"+mouth_x+"-"+day_x;
+            Toast.makeText(menoscategory.this,date_x,Toast.LENGTH_LONG).show();
 
 
 
