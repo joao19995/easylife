@@ -147,7 +147,7 @@ public class chart extends AppCompatActivity {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
-        // you will actually use after this query..
+        // you will actually use after this query...
         String[] projection = {
                 PetEntry._ID,
                 PetEntry.COLUMN_MONEY,
